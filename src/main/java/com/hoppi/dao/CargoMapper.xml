@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoppi.dao.CargoMapper">
+    <insert id="insertAndUpdate" parameterType="Cargo">
+        insert into depository(art_no, depo_no, amount, unit_price)
+        values(#{art_no}, #{depo_no}, #{amount}, #{unit_price})
+        on duplicate key update unit_price=(amount * unit_price + #{amount} * #{unit_price})/(amount + #{amount}), amount=amount+#{amount};
+    </insert>
+
+    <delete id="deleteAllZero">
+        delete from depository where amount=0;
+    </delete>
+
+    <update id="update" parameterType="Cargo">
+        update depository
+        set unit_price=(amount * unit_price - #{amount} * #{unit_price})/(amount - #{amount}), amount=amount-#{amount}
+        where art_no=#{art_no} and depo_no=#{depo_no};
+    </update>
+
+    <select id="selectDepo" resultType="Cargo">
+        select d.*, s.name as name from depository d, stuff s where d.depo_no=#{depo_no} and s.art_no=d.art_no order by d.art_no;
+    </select>
+
+    <select id="select" resultType="Cargo">
+        select d.*, s.name as name from depository d, stuff s where s.art_no=d.art_no;
+    </select>
+</mapper>

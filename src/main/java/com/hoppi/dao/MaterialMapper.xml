@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoppi.dao.MaterialMapper">
+
+    <insert id="insertAndUpdate" parameterType="Cargo">
+        insert into stuff(art_no, name, amount, avg_price)
+        values(#{art_no}, #{name}, #{amount}, #{unit_price})
+        on duplicate key update avg_price=(amount * avg_price + #{amount} * #{unit_price})/(amount + #{amount}), amount=amount+#{amount};
+    </insert>
+
+    <update id="update" parameterType="Cargo">
+        update stuff
+        set avg_price=(amount * avg_price - #{amount} * #{unit_price})/(amount - #{amount}), amount=amount-#{amount}
+        where art_no=#{art_no};
+    </update>
+
+    <select id="selectAll" resultType="Material">
+        select * from stuff order by art_no;
+    </select>
+    <delete id="delete">
+        delete from stuff where amount=0;
+    </delete>
+</mapper>

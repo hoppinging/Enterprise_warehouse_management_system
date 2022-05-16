@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoppi.dao.UserMapper">
+    <insert id="insert" parameterType="User">
+        insert into user (name, rbac, pwd)
+        values (#{name}, #{rbac}, #{pwd});
+    </insert>
+    <select id="getPwd" resultType="java.lang.String">
+        select pwd
+        from user
+        where id=#{id};
+    </select>
+    <select id="getInfo" resultType="User">
+        select *
+        from user
+        where id=#{id};
+    </select>
+    <select id="select" resultType="User">
+        select * from user order by id;
+    </select>
+    <delete id="delete">
+        delete
+        from user
+        where id=#{id};
+    </delete>
+    <update id="update">
+        update user
+        set name=#{user.name}, rbac=#{user.rbac}, pwd=#{user.pwd}
+        where id=#{id};
+    </update>
+</mapper>

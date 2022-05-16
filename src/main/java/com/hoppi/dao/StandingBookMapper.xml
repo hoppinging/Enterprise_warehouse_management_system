@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoppi.dao.StandingBookMapper">
+    <insert id="insert" parameterType="StandingBook">
+        insert into log(depo_no, art_no, state, amount, unit_price, total, target)
+        values(#{depo_no}, #{art_no}, #{state}, #{amount}, #{unit_price}, #{total}, #{target});
+    </insert>
+
+    <select id="select" resultType="StandingBook">
+        select *
+        from log
+        where time_stamp >= #{from} and <![CDATA[time_stamp <= #{to}]]>
+        <if test="depo_no != null and depo_no != ''">
+            and depo_no = #{depo_no}
+        </if>
+        order by time_stamp;
+    </select>
+
+    <delete id="delete">
+        delete
+        from log
+        where time_stamp >= #{from} and <![CDATA[time_stamp <= #{to}]]>
+        <if test="depo_no != null and depo_no != ''">
+            and depo_no = #{depo_no}
+        </if>;
+    </delete>
+</mapper>
