@@ -44,10 +44,10 @@ public class UserController {
                 model.addAttribute("materialList", materialList);
             }
             model.addAttribute("user", userService.getInfo(id));
-            return "redirect:/working";
+            return "working";
         }
         model.addAttribute("failed", 1);
-        return "/index";
+        return "/index.jsp";
     }
     @RequestMapping("/working")
     public String gotoWorking(){
@@ -84,7 +84,7 @@ public class UserController {
     public String toUpdateStaff(Model model, @PathVariable int id) {
         User userVariable = userService.getInfo(id);
         model.addAttribute("userVariable", userVariable);
-        return "/staffUpdate";
+        return "staffUpdate";
     }
     //修改员工
     @RequestMapping("/updateStaff")
@@ -98,7 +98,7 @@ public class UserController {
         model.addAttribute("update", update);
         User userVariable = userService.getInfo(Integer.parseInt(id));
         model.addAttribute("userVariable", userVariable);
-        return "/staffUpdate";
+        return "staffUpdate";
     }
     //删除员工
     @RequestMapping("/deleteStaff/{id}")

@@ -6,20 +6,20 @@
   Time: 13:21
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>台账管理</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="css/test/jeDate-test.css">
-    <link type="text/css" rel="stylesheet" href="css/skin/jedate.css">
+    <link type="text/css" rel="stylesheet" href="../css/test/jeDate-test.css">
+    <link type="text/css" rel="stylesheet" href="../css/skin/jedate.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jedate.js"></script>
+    <script type="text/javascript" src="../js/jedate.js"></script>
     <script>
         function quit() {
             sessionStorage.clear();
-            window.location.href="${pageContext.request.contextPath}/";
+            window.location.href="..";
         }
         $(function () {
             //开始时间
@@ -53,7 +53,7 @@
         return;
     }
 %>
-<script src="js/alert.js"></script>
+<script src="../js/alert.js"></script>
 <%
     int deleteLog = -1;
     try {
@@ -129,6 +129,7 @@
                 </tr>
                 </thead>
                 <tbody>
+                <%--@elvariable id="standingBookList" type="java.util.List"--%>
                 <c:forEach var="standingBook" items="${standingBookList}">
                     <tr>
                         <td>${standingBook.time_stamp.toLocaleString()}</td>
