@@ -5,8 +5,8 @@
   Time: 15:23
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<script src="js/alert.js"></script>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<script src="../js/alert.js"></script>
 <%
     boolean input_success = false;
     boolean output_success = false;

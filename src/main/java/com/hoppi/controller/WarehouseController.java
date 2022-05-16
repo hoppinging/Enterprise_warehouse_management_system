@@ -72,7 +72,7 @@ public class WarehouseController {
         }
         standingBookService.insert(standingBook);
         model.addAttribute("input_success", true);
-        return "redirect:/working";
+        return "working";
     }
     //出库
     @RequestMapping("/output")
@@ -100,28 +100,28 @@ public class WarehouseController {
         }
         standingBookService.insert(standingBook);
         model.addAttribute("output_success", true);
-        return "redirect:/working";
+        return "working";
     }
     //查看货物表
     @RequestMapping("/listCargo")
     public String listCargo(Model model) {
         List<Cargo> cargoList = cargoService.select();
         model.addAttribute("cargoList", cargoList);
-        return "redirect:/working";
+        return "working";
     }
     //查看单个仓库货物表
     @RequestMapping("/listDepo")
     public String listDepo(Model model, @Param("depo_no") String depo_no) {
         List<Cargo> cargoList = cargoService.selectDepo(depo_no);
         model.addAttribute("cargoList", cargoList);
-        return "redirect:/working";
+        return "working";
     }
     //查看物料表
     @RequestMapping("/listMaterial")
     public String listMaterial(Model model) {
         List<Material> materialList = materialService.selectAll();
         model.addAttribute("materialList", materialList);
-        return "redirect:/working";
+        return "working";
     }
     //跳转到台账页
     @RequestMapping("/toLogList")
