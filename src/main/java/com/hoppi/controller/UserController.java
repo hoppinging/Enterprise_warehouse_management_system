@@ -65,7 +65,7 @@ public class UserController {
     }
     //跳转到添加员工页
     @RequestMapping("/toAddStaff")
-    public String toAddStaff(Model model) {
+    public String toAddStaff() {
         return "staffAdd";
     }
     //添加员工
