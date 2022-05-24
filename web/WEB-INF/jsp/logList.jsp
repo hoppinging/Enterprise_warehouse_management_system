@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <%--
   Created by IntelliJ IDEA.
   User: hoppi
@@ -10,12 +11,12 @@
 <html>
 <head>
     <title>台账管理</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="../css/test/jeDate-test.css">
-    <link type="text/css" rel="stylesheet" href="../css/skin/jedate.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/jedate.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="${ctx}/jeDate/skin/jedate.css">
+    <link type="text/css" rel="stylesheet" href="${ctx}/jeDate/test/jeDate-test.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${ctx}/jeDate/src/jedate.js"></script>
     <script>
         function quit() {
             sessionStorage.clear();
@@ -26,12 +27,16 @@
             jeDate("#from", {
                 format:"YYYY/MM/DD",
                 isTime:false,
-            })
+                theme:{bgcolor:"#6494ec",pnColor:"#6494ec"},
+                multiPane:false
+            });
             //结束时间
             jeDate("#to", {
                 format:"YYYY/MM/DD",
-                isTime:false
-            })
+                isTime:false,
+                theme:{bgcolor:"#6494ec",pnColor:"#6494ec"},
+                multiPane:false
+            });
         });
         function selectLog() {
             let dateForm = document.getElementsByName("dateForm");
@@ -53,7 +58,7 @@
         return;
     }
 %>
-<script src="../js/alert.js"></script>
+<script src="WEB-INF/js/alert.js"></script>
 <%
     int deleteLog = -1;
     try {

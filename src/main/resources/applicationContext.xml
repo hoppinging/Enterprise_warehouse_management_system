@@ -12,21 +12,8 @@
 <!--  MVC  -->
     <context:component-scan base-package="com.hoppi.controller"/>
     <mvc:default-servlet-handler/>
-    <mvc:annotation-driven>
-        <mvc:message-converters>
-            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <constructor-arg value="UTF-8"/>
-            </bean>
-            <!--  jackson乱码处理  -->
-<!--            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
-<!--                <property name="objectMapper">-->
-<!--                    <bean class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">-->
-<!--                        <property name="failOnEmptyBeans" value="false"/>-->
-<!--                    </bean>-->
-<!--                </property>-->
-<!--            </bean>-->
-        </mvc:message-converters>
-    </mvc:annotation-driven>
+    <mvc:annotation-driven/>
+    <mvc:resources location="/WEB-INF/" mapping="/**" />
     <!--  视图解析器  -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>

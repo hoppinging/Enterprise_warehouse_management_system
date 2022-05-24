@@ -421,7 +421,23 @@
             var getCurrValue = function () {
                 var mats = jet.reMatch(that.format), isEmpty = that.getValue() != "",curVal = [],
                     parmat = that.dlen == 7 ? "hh:mm:ss" : "YYYY-MM"+ (that.dlen <= 2 ? "":"-DD");
-                that.selectValue = [jet.parse(jet.getDateTime({}), parmat)];
+                					var result = that.valCell.value;
+                      if (!result) {
+                       that.selectValue = [jet.parse(jet.getDateTime({}), parmat)];
+                      } else {
+                       result = result.substr(0,11);
+                       var nowTime = [jet.parse(jet.getDateTime({}), parmat)];
+                       nowTime = nowTime[0];
+                       var time1 = new Date(result).setHours('0');
+                       var time2 = new Date(nowTime).setHours('0');
+                       var nDays = (parseInt((time1 - time2) / 1000 / 3600 / 24));
+                       var redate = {
+                        DD: nDays
+                       };
+                       that.selectValue = [jet.parse(jet.getDateTime(redate), parmat)];
+                      }
+                // that.selectValue = that.selectValue && that.selectValue.length > 0 ? that.selectValue :  [jet.parse(jet.getDateTime({}), parmat)];
+ 
                 if(isEmpty && isShow){
                     var getVal = that.getValue().split(range);
                     jet.each(new Array(range ? 2 : 1),function (a) {
@@ -575,8 +591,8 @@
                     objarr = jet.extend({YYYY:null,MM:null,DD:null},valobj||{}),
                     ranMat = [],newArr = new Array(2),unObj = function (obj) {
                         return [(objarr[obj] == undefined || objarr[obj] == null),objarr[obj]];
-                    }, defObj = [{ YYYY:dateY,MM:dateM,DD:dateD, hh:timeh,mm:timem,ss:times,zz:0o0},
-                        { YYYY:dateY,MM:dateM,DD:dateD, hh:timeh,mm:timem,ss:times,zz:0o0}];
+                    }, defObj = [{ YYYY:dateY,MM:dateM,DD:dateD, hh:timeh,mm:timem,ss:times,zz:00},
+                        { YYYY:dateY,MM:dateM,DD:dateD, hh:timeh,mm:timem,ss:times,zz:00}];
                 if (isValShow) {
                     //目标为空值则获取当前日期时间
                     jet.each(newArr,function (i) {
@@ -811,6 +827,8 @@
                         gval = jet.getDateTime(evobj),tmval = that.selectTime;
                     that.selectValue = [jet.parse(gval,"YYYY-MM-DD")];
                     that.selectDate = [{YYYY:gval.YYYY,MM:gval.MM,DD:gval.DD}];
+                    that.selectTime = [{ hh: gval.hh, mm: gval.mm, ss: gval.ss }]
+                    tmval = that.selectTime;
                     if(opts.onClose){
                         var nYM = jet.nextMonth(gval.YYYY,gval.MM),
                             ymarr = [{YYYY:gval.YYYY,MM:gval.MM,DD:gval.DD},{YYYY:nYM.y,MM:nYM.m,DD:null}];

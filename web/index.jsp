@@ -2,9 +2,8 @@
 <html>
   <head>
     <title>仓库管理系统</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <script src="js/alert.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <style>
       input::-webkit-input-placeholder{
         color:white !important;
@@ -22,23 +21,8 @@
         background-color: cornflowerblue;
       }
     </style>
-    <%
-      int failed = 0;
-      try {
-        failed = (int) request.getAttribute("failed");
-      } catch (Exception ignored){}
-    %>
   </head>
   <body>
-  <%
-    if (failed == 1) {
-  %>
-  <script>
-    alert("账号或密码错误");
-  </script>
-  <%
-    }
-  %>
   <div class="container" style="width: 400px; height: 250px; background-color: white; line-height: 20px; margin: 200px auto 0; border-radius: 10px">
     <div class="row clearfix">
       <div class="col-md-12 column">

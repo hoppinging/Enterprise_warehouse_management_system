@@ -1,4 +1,5 @@
-<%@ page import="com.hoppi.pojo.User" %><%--
+<%@ page import="com.hoppi.pojo.User" %>
+<%--
   Created by IntelliJ IDEA.
   User: hoppi
   Date: 2022/5/15
@@ -9,9 +10,9 @@
 <html>
 <head>
     <title>添加员工</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
     <script>
         function quit() {
             sessionStorage.clear();
@@ -26,27 +27,6 @@
         response.sendRedirect("/");
         return;
     }
-%>
-<script src="../js/alert.js"></script>
-<%
-    int add = -1;
-    try {
-        add = (int) session.getAttribute("add");
-    } catch (Exception ignored){}
-    if (add == 1) {
-%>
-<script>
-    alert("新增成功");
-</script>
-<%
-    } else if (add == 0){
-%>
-<script>
-    alert("新增失败");
-</script>
-<%
-    }
-    session.removeAttribute("add");
 %>
 <header style="background-color: cornflowerblue; color: white; height: 80px">
     <div class="container">

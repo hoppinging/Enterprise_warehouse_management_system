@@ -25,7 +25,7 @@ import java.util.List;
  * @since 1.0
  */
 @Controller
-@SessionAttributes(names = {"user", "cargoList", "materialList", "userList", "userVariable", "update", "delete", "add"})
+@SessionAttributes(names = {"user", "cargoList", "materialList", "userList", "userVariable", "update", "delete"})
 public class UserController {
     @Autowired
     private UserService userService;
@@ -46,8 +46,7 @@ public class UserController {
             model.addAttribute("user", userService.getInfo(id));
             return "working";
         }
-        model.addAttribute("failed", 1);
-        return "/index.jsp";
+        return "working";
     }
     @RequestMapping("/working")
     public String gotoWorking(){
@@ -67,16 +66,17 @@ public class UserController {
     //跳转到添加员工页
     @RequestMapping("/toAddStaff")
     public String toAddStaff(Model model) {
-        model.addAttribute("add", -1);
         return "staffAdd";
     }
     //添加员工
     @RequestMapping("/addStaff")
-    public String addStaff(Model model, User user) {
-        int add = userService.insert(user);
+    public String addStaff(Model model,
+                           @RequestParam String name,
+                           @RequestParam String rbac,
+                           @RequestParam String pwd) {
+        userService.insert(new User(name, Boolean.parseBoolean(rbac), pwd));
         List<User> userList = userService.select();
         model.addAttribute("userList", userList);
-        model.addAttribute("add", add);
         return "redirect:/toStaffList";
     }
     //跳转到修改员工页
