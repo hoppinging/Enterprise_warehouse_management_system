@@ -9,9 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62f762d-6adf-49da-a0bd-0d52aa9d005a" name="变更" comment="2022-05-24 17:02">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoppi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoppi/controller/UserController.java" afterDir="false" />
+    <list default="true" id="b62f762d-6adf-49da-a0bd-0d52aa9d005a" name="变更" comment="2022-05-24 17:19">
+      <change beforePath="$PROJECT_DIR$/.idea/Enterprise_warehouse_management_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Enterprise_warehouse_management_system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +83,9 @@
     <option name="jreName" value="#JAVA_HOME" />
     <option name="vmOptions" value="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="26XWgfbxw8v3yBcC2uctwfvSOkO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -105,7 +111,7 @@
     <property name="project.structure.last.edited" value="工件" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4862069" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/web/WEB-INF/js/jedate.js" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -128,17 +134,7 @@
       <recent name="D:\JetBrains\IdeaProjects\Enterprise_warehouse_management_system\web" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat 服务器.Tomcat 8.5.75">
-    <configuration name="DateTest.dateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Enterprise_warehouse_management_system" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DateTest" />
-      <option name="METHOD_NAME" value="dateTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Tomcat 8.5.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.75" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -226,15 +222,6 @@
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="JUnit.DateTest.dateTest" />
-      <item itemvalue="Tomcat 服务器.Tomcat 8.5.75" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.DateTest.dateTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -304,7 +291,8 @@
       <workItem from="1653147310325" duration="9000" />
       <workItem from="1653267882281" duration="23000" />
       <workItem from="1653375022920" duration="191000" />
-      <workItem from="1653379377334" duration="2370000" />
+      <workItem from="1653379377334" duration="2994000" />
+      <workItem from="1653384326837" duration="129000" />
     </task>
     <task id="LOCAL-00001" summary="2022-05-16 06:48:51">
       <created>1652698567944</created>
@@ -327,7 +315,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653383027909</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2022-05-24 17:14">
+      <created>1653383694719</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653383694719</updated>
+    </task>
+    <task id="LOCAL-00005" summary="2022-05-24 17:19">
+      <created>1653383973487</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653383973487</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +350,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2022-05-16 06:48:51" />
     <MESSAGE value="2022-05-24 17:02" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-05-24 17:02" />
+    <MESSAGE value="2022-05-24 17:14" />
+    <MESSAGE value="2022-05-24 17:19" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-05-24 17:19" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
