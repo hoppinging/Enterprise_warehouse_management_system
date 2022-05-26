@@ -77,7 +77,7 @@
         </div>
     </div>
     <div class="row clearfix">
-        <div class="col-md-11 column" style="margin: auto">
+        <div class="col-md-11 column" style="overflow-y: scroll; height: 450px; margin: auto">
             <table class="table table-hover table-striped">
                 <thead>
                 <tr class="col-md-12">

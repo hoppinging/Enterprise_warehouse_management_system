@@ -87,19 +87,26 @@
                 <label for="rbac">权限</label><br>
                 <%
                     User userVariable = (User) session.getAttribute("userVariable");
-                    if (userVariable.isRbac()) {
+                    if (userVariable.isRbac() && user.isRbac()) {
                 %>
                 <select style="color: cornflowerblue" name="rbac" id="rbac">
                     <option value=false>普通员工</option>
                     <option value=true selected>管理员</option>
                 </select>
                 <%
-                    } else {
+                    } else if (!userVariable.isRbac() && user.isRbac()){
                 %>
                 <select style="color: cornflowerblue" name="rbac" id="rbac">
                     <option value=false selected>普通员工</option>
                     <option value=true>管理员</option>
                 </select>
+                <%
+                    } else {
+                %>
+                <select style="display: none" name="rbac" id="rbac">
+                    <option value=false selected></option>
+                </select>
+                <input type="text" style="color: cornflowerblue" value="普通员工" readonly>
                 <%
                     }
                 %>

@@ -31,7 +31,7 @@
                     </div>
                     <br>
                     <div class="el-col-md-24 column" style="overflow-y: scroll; float: top; height: 300px; background: white; border-radius: 10px">
-                        <table class="table table-hover table-striped" style="color: cornflowerblue; border-collapse: collapse; border-top: 1px solid cornflowerblue; border-left: 1px solid cornflowerblue">
+                        <table class="table table-hover" style="color: cornflowerblue; border-collapse: collapse; border-top: 1px solid cornflowerblue; border-left: 1px solid cornflowerblue">
                             <thead>
                             <tr>
                                 <th>货号</th>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-1"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-5 column" style="background-color: cornflowerblue; color: white; float: left; text-align: center; border-radius: 10px">
                 <div class="modal-body">
                     <p>物料显示</p>
@@ -80,8 +80,8 @@
                         </div>
                     </div>
                     <br>
-                    <div class="el-col-md-24 column" style="overflow-y: scroll; float: top; height: 300px; background: white; border-radius: 10px">
-                        <table class="table table-hover table-striped" style="color: cornflowerblue; border-collapse: collapse; border-top: 1px solid cornflowerblue; border-left: 1px solid cornflowerblue">
+                    <div class="el-col-md-24 column" style="overflow-y: scroll; float: top; height: 315px; background: white; border-radius: 10px">
+                        <table class="table table-hover" style="color: cornflowerblue; border-collapse: collapse; border-top: 1px solid cornflowerblue; border-left: 1px solid cornflowerblue">
                             <thead>
                             <tr>
                                 <th>货号</th>
