@@ -3,10 +3,15 @@
         PUBLIC "-//mybatis.org//DTD config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <!-- 输出sql,只要调用了dao里的sql，就会输出，配合上面使用 -->
+        <setting name="logPrefix" value="dao."/>
+        <!-- logback要配合SLF4J使用,所以设置这个 -->
+        <setting name="logImpl" value="SLF4J"/>
+    </settings>
     <typeAliases>
         <package name="com.hoppi.pojo"/>
     </typeAliases>
-<!--    <mappers>-->
-<!--        <package name="com.hoppi.dao"/>-->
-<!--    </mappers>-->
 </configuration>
