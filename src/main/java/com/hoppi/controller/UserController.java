@@ -46,7 +46,7 @@ public class UserController {
             model.addAttribute("user", userService.getInfo(id));
             return "working";
         }
-        return "working";
+        return "backToIndex";
     }
     @RequestMapping("/working")
     public String gotoWorking(){
@@ -98,6 +98,11 @@ public class UserController {
         model.addAttribute("update", update);
         User userVariable = userService.getInfo(Integer.parseInt(id));
         model.addAttribute("userVariable", userVariable);
+        User user = (User) model.getAttribute("user");
+        assert user != null;
+        if (userVariable.getId() == user.getId()) {
+            model.addAttribute("user", userVariable);
+        }
         return "staffUpdate";
     }
     //删除员工

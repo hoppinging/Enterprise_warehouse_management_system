@@ -1,6 +1,5 @@
 package com.hoppi.service;
 
-import com.github.pagehelper.PageHelper;
 import com.hoppi.dao.CargoMapper;
 import com.hoppi.pojo.Cargo;
 import org.springframework.beans.factory.annotation.Autowired;

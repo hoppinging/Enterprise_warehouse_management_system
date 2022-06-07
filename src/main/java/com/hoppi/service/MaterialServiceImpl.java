@@ -1,10 +1,8 @@
 package com.hoppi.service;
 
-import com.github.pagehelper.PageHelper;
 import com.hoppi.dao.MaterialMapper;
 import com.hoppi.pojo.Cargo;
 import com.hoppi.pojo.Material;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
